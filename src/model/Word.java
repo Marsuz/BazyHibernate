@@ -1,14 +1,22 @@
 package model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  * Created by Marcin on 2015-11-17.
  */
+
+@Entity
 public class Word{
 
+    @Id
     private String id;
+
+    @ManyToMany(mappedBy = "content")
     private Set<Sentence> sentences;
 
 

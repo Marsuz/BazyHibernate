@@ -1,13 +1,18 @@
 package model;
 
+import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
 
+@Entity
 public class ProcessedUrl {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String url;
 	private Date date;
+	@OneToMany(mappedBy = "url")
 	private Set<Sentence> sentences;
 	
 	public ProcessedUrl() {}

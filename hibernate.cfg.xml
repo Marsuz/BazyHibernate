@@ -20,11 +20,16 @@
 		<property name="hibernate.enable_lazy_load_no_trans">true</property>
 		
 		<!-- Mappings -->
-		<mapping resource="model/resources/Sentence.hbm.xml" />
+		<!--<mapping resource="model/resources/Sentence.hbm.xml" />
 		<mapping resource="model/resources/ProcessedUrl.hbm.xml" />
-		<mapping resource="model/resources/Word.hbm.xml" />
+		<mapping resource="model/resources/Word.hbm.xml" />-->
 
-</session-factory>
+		<mapping class="model.Sentence" />
+		<mapping class="model.ProcessedUrl" />
+		<mapping class="model.Word" />
+
+
+	</session-factory>
 </hibernate-configuration>
 
 
