@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="model">
+ 
+    <class name="Sentence">
+        <id name="id">
+                <generator class="native"/>
+        </id>
+        <list name="content" table="SentenceWord">
+            <key column="sentenceId"/>
+            <list-index column="idx" />
+            <many-to-many column="wordId" class="Word"/>
+        </list>
+        <many-to-one name="url" 
+        			column="urlId"
+        			not-null="true"/>     
+    </class>
+ 
+</hibernate-mapping>
+
+
+

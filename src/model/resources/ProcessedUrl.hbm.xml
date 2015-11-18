@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="model">
+ 
+    <class name="ProcessedUrl">
+        <id name="id">
+                <generator class="native"/>
+        </id>
+        <property name="url" type="text"/>
+        <property name="date"/>
+        <set name="sentences" inverse="true">
+        	<key column="urlId"/>
+        	<one-to-many class="Sentence"/>
+        </set>
+        	
+    </class>
+ 
+</hibernate-mapping>
